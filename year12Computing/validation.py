@@ -1,14 +1,14 @@
-
 database= [['eesahafeez', '1234', 'qwerty'], 
            ['qwertyuiop', '4321','asdfg' ]]
 
 def database_search():
+    found = False
     for i in range(len(database)):
         if database[i][0] == id:
-            return True
-        else:
-            return False
-  
+            found=True
+    if not found:
+        found = False
+    return found
 
 
 correct_id = False
@@ -21,7 +21,7 @@ while id_check != 2 and correct_id == False :
     correct_id = database_search()
 if id_check==2:
     print('Not found in database')
-if id_check<2:
+if id_check<3:
     for i in range(len(database)):
         if database[i][0] == id:
             correct_id = True
@@ -43,11 +43,7 @@ if correct_id == True:
         else:
             print('wrong pin')
 
-def databse_search():
-    for i in range(len(database)):
-        if database[i][0] == id:
-            return True
-  
+
 
 
 
