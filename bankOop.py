@@ -7,4 +7,5 @@ class Bank:
     
 
 
-    def __init__()
+    def __init__():
+      #unfinished
