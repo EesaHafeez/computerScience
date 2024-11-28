@@ -1,4 +1,4 @@
-
+# simple valdiation 
 id= input('Enter a character id: ')
 id_check=0
 while id_check != 2 and len(id) != 10:
