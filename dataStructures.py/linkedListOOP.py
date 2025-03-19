@@ -1,31 +1,33 @@
-class Node(): # creating a new node
-    # variables data, next
-    def __init__(self, theData):
-        self.data = theData
-        self.next = None
-    def changeNext(self,newNext):
-        self.next = newNext
+class Node :
+    def __init__ (self, myData):
+        self.data = myData
+        self.pointer = None
 
-class linkedList(): # creating a new linked list
-    # variables head
-    def __init__(self):
-        self.head = None
-    def addToFront(self, data):
-        new_node = Node(data)
-        if self.head == None:
-            self.head = new_node
-        else:
-            new_node.changeNext(self.head)
-            self.head = new_node
+    def changePointer(self, newPointer):
+        self.pointer = newPointer
 
-myList = linkedList()
-myList. addToFront(222)
-myList. addToFront(111)
-myList. addToFront(222)
+    def getPointer(self):
+        return self.pointer
+    
+    def getdData(self):
+        return self.data
+    
+    def changedata(self, newdata):
+        self.data = newdata
 
-print(myList.head.data)
-print(myList.head.next.data)
-print(myList.head.next.next.data)
+
+
+class linkedlist:
+    def __init__(self,data):
+        newNode = Node(data)
+        self.head = newNode.getPointer()
+        self.Tail = newNode.getPointer()
+
+    def addNode(self, data):
+        self.new_node = Node(data)
+    
+        
+
 
 
 
