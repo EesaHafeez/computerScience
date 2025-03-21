@@ -24,6 +24,16 @@ class Stack:
         dataToReturn = self.top.getData()
         self.top = self.top.getPointer()
         return dataToReturn
+    def peekItem(self):
+        return self.top.getData()
+    def isEmpty(self):
+        if self.top == None:
+            return True
+    def getTop(self):
+        return self.top
+
+        
+
         
         
 
@@ -35,10 +45,19 @@ class Stack:
 
 
 
-newStack = Stack('eesa')
-newStack.addItem('Husaam')
-newStack.popItem()
-print(newStack.top.getData())   
+name = input('Enter a word: ')
+newStack = Stack(name[0])
 
+for i in range (1,len(name)):
+    newStack.addItem(name[i])
+wordSame = 0
+for i in range(0,len(name)):
+    if newStack.popItem() == name[i]:
+        wordSame = wordSame + 1
+
+if wordSame == len(name):
+    print('Is palindrome')
+else:
+    print('Not palindrome')
 
 
