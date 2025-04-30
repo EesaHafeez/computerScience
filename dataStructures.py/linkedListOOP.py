@@ -1,4 +1,4 @@
-class Node :
+class Node:
     def __init__ (self,Data, pointer):
         self.data = Data
         self.pointer = pointer
@@ -31,7 +31,7 @@ class linkedlist:
         if current.getData() > data:
             self.head = Node(data,current)
         elif current.getData() <= data:
-            while current.getPointer() is not None and data >= current.getPointer().getData():
+            while (current.getPointer() is not None) and (data >= current.getPointer().getData()):
                 current = current.getPointer()
             current.setPointer(Node(data,current.getPointer()))
             if current.getPointer().getPointer() == None:
@@ -47,32 +47,47 @@ class linkedlist:
             current.setPointer(current.getPointer().getPointer())
             if current.getPointer() == None:
                 self.tail = current
+        
+    def traverse(self):
+        current = self.head
+        while current is not None:
+            print(current.getData())
+            current = current.getPointer()
+        
+
+# print('Menu system: ')
+# print('1 - Add an item')
+# print('2 - Delete an item')
+# print('3 - Print list')
+# choice = int(input('Enter a number: '))
+# if
+
+
+
+newList = linkedlist(1)
+newList.addNode(10)
+newList.addNode(3)
+newList.addNode(7)
+print("traversal") 
+newList.traverse()
+newList.deleteNode(7)
+newList.deleteNode(1)
+newList.deleteNode(10)
+print("traversal") 
+newList.traverse()
+newList.addNode(2)
+newList.addNode(3)
+newList.addNode(5)
+print("traversal") 
+newList.traverse()
+newList.deleteNode(3)
+print("traversal") 
+newList.traverse()
 
 
 
 
-newList = linkedlist(5)
-newList.addNode(6)
-newList.addNode(5454)
-newList.addNode(0)
 
-
-print('Head = ' + str(newList.getHead().getData()))
-print('Tail = ' + str(newList.getTail().getData()))
-print('')
-print(newList.getHead().getData())
-print(newList.getHead().getPointer().getData())
-print(newList.getHead().getPointer().getPointer().getData())
-print(newList.getHead().getPointer().getPointer().getPointer().getData())
-
-newList.deleteNode(5454)
-
-print('Head = ' + str(newList.getHead().getData()))
-print('Tail = ' + str(newList.getTail().getData()))
-print('')
-print(newList.getHead().getData())
-print(newList.getHead().getPointer().getData())
-print(newList.getHead().getPointer().getPointer().getData())
 
 
 
